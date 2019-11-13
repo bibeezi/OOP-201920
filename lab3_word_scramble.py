@@ -24,27 +24,18 @@ class WordScramble:
     def scramble(self):
         # print what was input
         print("The user input was: ", str(self.user_input))
-
-
         list1 = self.user_input.strip().split()
         print("The sentence right now is", list1)
-
 
         for counter, word in enumerate(list1):
             print(counter)
             #for counter = 0, number of words in list1
-
-
             checkWord = list(word)
-
-
             if len(word) > 4:
                 #swap second and second last letter
                 #swap third and third last letter
                 #etc.
                 print("In if word > 4 letters")
-
-
                 if len(checkWord) % 2 == 0:
                     for i in range(1, int(len(checkWord) / 2)):
                          temp = checkWord[i]
@@ -56,20 +47,15 @@ class WordScramble:
                          checkWord[i] = checkWord[-1 - i]
                          checkWord[-1 - i] = temp
                 print("After swapping, word is", checkWord)
-
-
             elif len(word) == 4:
                 # swap indexes [1] and [2]
                 print("In elif word is 4 letters")
                 checkWord = (checkWord[0], checkWord[2], checkWord[1], checkWord[3])
                 print("After swapping, word is", checkWord)
-
-
             else:
                 #do nothing
                 print("in else where word < 4 letters")
                 print("No swap:", checkWord)
-
 
             #put scrambled word back into list
             list1[counter] = ''.join(checkWord)
